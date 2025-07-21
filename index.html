@@ -126,7 +126,6 @@
       padding: 15px;
     }
 
-    /* Contact Form Styling */
     .contact-form {
       background: #ffffff;
       max-width: 600px;
@@ -150,7 +149,6 @@
       border: 1px solid #ccc;
     }
 
-
     .contact-form button {
       background-color: #4CAF50;
       color: white;
@@ -165,10 +163,40 @@
       background-color: #45a049;
     }
   </style>
+
+  <script>
+    function sendToWhatsApp() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var breed = document.getElementById("breed").value;
+      var food = document.getElementById("pet-food").value;
+      var accessories = document.getElementById("pet-Accessories").value;
+      var message = document.getElementById("message").value;
+
+      var phoneNumber = "8379984588";
+      var url = "https://wa.me/91" + phoneNumber + "?text=" 
+        + encodeURIComponent(
+          "Dog Inquiry from PUP Paradise:\n\n" +
+          "Name: " + name + "\n" +
+          "Email: " + email + "\n" +
+          "Phone: " + phone + "\n" +
+          "Breed: " + breed + "\n" +
+          "Pet Food: " + food + "\n" +
+          "Accessories: " + accessories + "\n" +
+          "Message: " + message
+        );
+
+      window.open(url, '_blank');
+    }
+  </script>
 </head>
+
 <body>
 
-  <div class="navbar">
+  <!-- Navbar, Video Header, Dogs, Food, Accessories Sections (Already provided above) -->
+  <!-- ... KEEP ALL THE CONTENT ABOVE ... -->
+<div class="navbar">
     <h1>PUP PARADISE</h1>
     <a href="#contact">Contact</a>
     <a href="#Pet-Accessories">Pet-Accessories</a>
@@ -334,8 +362,6 @@
         <h3>Dog Beds</h3>
     </div>
   </div>
-
-
   <!-- CONTACT SECTION -->
   <div id="contact">
     <div class="footer">
@@ -344,66 +370,66 @@
     </div>
 
     <div class="contact-form">
-    <h2><b><u>Dog Inquiry</u></b></h2>
-    <form >
-      <label>Your Name</label>
-      <input type="text" name="name" placeholder="Enter your name" required>
+      <h2><b><u>Dog Inquiry</u></b></h2>
+      <form onsubmit="sendToWhatsApp(); return false;">
+        <label>Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
-      <label>Email</label>
-      <input type="email" name="email" placeholder="Enter your email" required>
+        <label>Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-      <label>Phone</label>
-      <input type="tel" name="phone" placeholder="Enter your phone number" required>
+        <label>Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
 
-      <label>Choose Breed</label><br>
-      <select name="breed" required>
-        <option value=""><b>Select a dog breed</b></option>
-        <option>German Shepherd</option>
-        <option> Bulldog </option>
-        <option>Golden Retriever </option>
-        <option>Rottweiler </option>
-        <option>cocker spaniel</option>
-        <option>Beagle</option>
-        <option>shih tzus</option>
-        <option>Pomeranian</option>
-        <option>boxer</option>
-        <option>Husky</option>
-        <option>Great Dane</option>
-        <option>pug</option>
-        <option>Dachshund</option>
-       <option>Labrador</option> 
-       <option>Indies</option>
-      </select><br><br>
+        <label>Choose Breed</label><br>
+        <select id="breed" name="breed" required>
+          <option value="">Select a dog breed</option>
+          <option>German Shepherd</option>
+          <option>Bulldog</option>
+          <option>Golden Retriever</option>
+          <option>Rottweiler</option>
+          <option>Cocker Spaniel</option>
+          <option>Beagle</option>
+          <option>Shih Tzus</option>
+          <option>Pomeranian</option>
+          <option>Boxer</option>
+          <option>Husky</option>
+          <option>Great Dane</option>
+          <option>Pug</option>
+          <option>Dachshund</option>
+          <option>Labrador</option>
+          <option>Indies</option>
+        </select><br><br>
 
-      <label>Choose Pet-Food</label><br>                                           
-      <select name="pet-food">
-        <option value=""><b>Select a dog Pet-Food</b></option>
-        <option> Royal Canin </option>
-        <option>  Pedigree  </option>
-        <option>Drools </option>
-        <option> Heel's science diet  </option>
-        <option>Acana</option>
-        <option>Arden Grange</option>
-        <option>Purpet</option>
-        <option>Canine Creek</option>
-        <option>Meat Up</option>
-        <option> Farmina N & D</option>
-      </select><br><br>
+        <label>Choose Pet-Food</label><br>                                           
+        <select id="pet-food" name="pet-food">
+          <option value="">Select a dog Pet-Food</option>
+          <option>Royal Canin</option>
+          <option>Pedigree</option>
+          <option>Drools</option>
+          <option>Hill’s Science Diet</option>
+          <option>Acana</option>
+          <option>Arden Grange</option>
+          <option>Purepet</option>
+          <option>Canine Creek</option>
+          <option>Meat Up</option>
+          <option>Farmina N&D</option>
+        </select><br><br>
 
-      <label>Choose Pet-Accessories</label><br>                                           
-      <select name="pet-Accessories">
-        <option value=""><b>Select a pet Accessories</b></option>
-        <option>Dog House</option>
-        <option> Bowls </option>
-        <option>Body-Belt </option>
-        <option>Chew-Toy's  </option>
-        <option>Dod-Bed's</option>
-      </select><br><br>
+        <label>Choose Pet-Accessories</label><br>                                           
+        <select id="pet-Accessories" name="pet-Accessories">
+          <option value="">Select a pet Accessory</option>
+          <option>Dog House</option>
+          <option>Bowls</option>
+          <option>Body Belt</option>
+          <option>Chew Toys</option>
+          <option>Dog Beds</option>
+        </select><br><br>
 
-      <label>Message</label>
-      <textarea name="message" rows="4" placeholder="Your message here..."></textarea>
+        <label>Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your message here..."></textarea>
 
-      <button type="submit">Submit</button>
+        <button type="submit">Submit via WhatsApp</button>
       </form>
     </div>
   </div>
